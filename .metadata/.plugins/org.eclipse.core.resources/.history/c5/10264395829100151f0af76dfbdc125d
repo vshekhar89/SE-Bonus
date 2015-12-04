@@ -1,0 +1,29 @@
+
+public class ToUpperCase extends TextReaderDecorator{
+	
+	TextReader readText = null;
+	
+	public ToUpperCase(TextReader read){
+		readText= read;
+	}
+	
+	@Override
+	public String getContent(){
+		if(readText.content !=null){
+			readText.content=readText.content.toUpperCase();
+		}
+		return readText.content;
+	}
+	
+	
+	@Override
+	public void display(){
+		if(readText.content !=null){
+			readText.content=readText.content.toUpperCase();
+			System.out.println(readText.content.toUpperCase());
+		}
+		//System.out.println(readText.content);
+	}
+
+	
+}

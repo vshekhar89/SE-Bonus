@@ -1,0 +1,34 @@
+import java.io.FileNotFoundException;
+
+public class TestReader {
+
+	public static void main(String args[]) throws FileNotFoundException{
+		String filepath ="//Users//shardendu//test.txt";
+		TextReader read= new ReadFile(filepath);
+		System.out.println("-----------------------Display Contents of File--------------------");
+		read.display();
+		
+		System.out.println("-------------------------Upercase & Encrypt------------------------");
+		read = new ToUpperCase(read);
+		//TextReader encode= new EncryptFile(read);
+		read.display();
+		
+		
+		/*System.out.println("-------------------------Encrypt & UpperCase------------------------");
+		read=new ReadFile(filepath);
+		encode= new EncryptFile(read);
+		changeCase = new ToUpperCase(read);
+		changeCase.display();
+		
+		
+		System.out.println("-------------------------Encrypt & Display--------------------------");
+		read=new ReadFile(filepath);
+		encode= new EncryptFile(read);
+		encode.display();
+		
+		System.out.println("-------------------------UpperCase & Display---------------------------");
+		read=new ReadFile(filepath);
+		changeCase = new ToUpperCase(read);
+		changeCase.display();*/
+	}
+}

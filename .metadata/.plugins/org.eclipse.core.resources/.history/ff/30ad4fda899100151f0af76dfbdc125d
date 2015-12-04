@@ -1,0 +1,60 @@
+
+public class EncryptFile extends TextReaderDecorator {
+
+	TextReader readText= null;
+	
+	public EncryptFile(TextReader read){
+		readText= read;
+		//setContent(readText.content);
+	}
+	
+	@Override
+	public String getContent(){
+		/*char[] str = readText.content.toCharArray();
+		char[] output= new char[str.length];
+		
+		for(int i=0;i<str.length;i++){
+			if(str[i]==' ' || str[i]=='.')
+				output[i]= (char)str[i];
+			else
+			output[i]= (char)(str[i]+1);
+		}
+		readText.content=new String(output);*/
+		setContent(readText.getContent());
+		return readText.content;
+		//System.out.println(readText.content);
+	}
+	
+	@Override
+	public void setContent(String content){
+		char[] str = content.toCharArray();
+		char[] output= new char[str.length];
+		
+		for(int i=0;i<str.length;i++){
+			if(str[i]==' ' || str[i]=='.')
+				output[i]= (char)str[i];
+			else
+			output[i]= (char)(str[i]+1);
+		}
+		readText.content=new String(output);
+		//return readText.content;
+		//System.out.println(readText.content);
+	}
+	
+	@Override
+	public void display(){
+		/*char[] str = readText.content.toCharArray();
+		char[] output= new char[str.length];
+		
+		for(int i=0;i<str.length;i++){
+			if(str[i]==' ' || str[i]=='.')
+				output[i]= (char)str[i];
+			else
+			output[i]= (char)(str[i]+1);
+		}
+		readText.content=new String(output);
+		System.out.println(readText.content);*/
+		System.out.println(getContent());
+	   
+	}
+}
